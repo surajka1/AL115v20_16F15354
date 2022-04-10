@@ -1,0 +1,55 @@
+[PROJECT]
+Target=AL115v20.hex
+Processor_Text=PIC16F15354
+CCSVersion=5.074
+Compiler=PCM
+[Target Data]
+FileList=AL115v20.c
+[AL115v20.c]
+Type=4
+[mru-list]
+1=AL115v20.c
+
+[defines]
+buildcount=4
+
+[ProjectLog]
+Days=2
+D1=10-06-2018
+D1_L=9
+D1_L1=[36956]Project Closed.
+D1_L2=[36986]Project Opened.
+D1_L3=[37601]Started Editing.
+D1_L4=[37607]Stopped Editing.
+TotalEdit=2
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L5=[37607]Project Closed.
+D1_L6=[39087]Project Opened.
+D1_L7=[39095]Project Closed.
+D1_L8=[39104]Project Opened.
+D1_L9=[39936]Project Closed.
+D2=26-06-2018
+D2_L=4
+D2_L1=[40262]Project Opened.
+D2_L2=[40369]Started Editing.
+D2_L3=[40669]Stopped Editing.
+D2_E=1
+D2_D=0
+D2_L4=[73111]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=AL115v20.c
+t1=1
+2=main.h
+t2=1
+Count=3
+3=rom.c
+t3=1
+[Units]
+Count=1
+1=AL115v20 (main)

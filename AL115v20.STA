@@ -1,0 +1,88 @@
+
+ROM used:   3774/4096 (92%)
+            3809/4096 (93%) including unused fragments
+
+            1.5 Average locations per line
+            12.3 Average locations per statement
+
+RAM used:   146/512 (29%) at main() level
+            229/512 (45%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 16
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  125    52  17  AL115v20.c
+   16     0   0  main.h
+ 1473     0   0  C:\Program Files (x86)\PICC\Devices\16F15354.h
+  168     0   0  C:\Program Files (x86)\PICC\Drivers\stdint.h
+  160     0   0  definitions.c
+  174    30  10  rom.c
+  230   102  33  checkconditions.c
+  192   106  35  functions.c
+   28     3   1  int.c
+   32    13   4  i2c_display.c
+----- -----
+ 2598   306 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     25   1    1             @delay_ms1
+0     23   1    1             @delay_us1
+ Inline         1             @I2C_WRITE_1
+0    109   3    6     59  2.0  write_int16_alarmrom
+ Inline         0             @FLASHLOAD16
+0     26   1    4     43  1.8  read_int16_alarmrom
+0     83   2    0    253  1.9  read_rom_values
+0     46   1    0    147  1.8  ResetRomPhase
+0     21   1    0     56  1.6  ResetRomBattery
+0     37   1    0    115  1.7  ResetRomKnob
+0     13   0    0     67  1.6  reset_rom
+0     92   2    6    291  4.9  phasecheck
+ Inline         5             @DIV1616
+0    185   5   10    405  6.1  phasecheck3
+ Inline        15             @DIV3232
+0     53   1    7    249  4.6  phasecheck2
+1    245   6    6    202  2.9  find_adj_volt
+ Inline         5             @MUL1616
+0     31   1    2             @ITOF
+0    156   4   17             @MULFF
+0    327   9   18             @ADDFF
+0     33   1    4             @SFTOI
+1    561  15    3   1907  6.9  checkconditions
+1     88   2    2   1512  3.4  print_readings
+0    313   8    4    416  3.4  init_settings
+0    250   7   16             @DIVFF
+1    109   3   12    138  4.3  CalculatePhaseValue
+1    428  11    6   3940  6.4  ProcessMasterData
+0      6   0    0     12  2.0  TIMER2_isr
+0      6   0    0     12  2.0  TIMER0_isr
+0      7   0    0      6  0.5  OSC_FAIL_isr
+0     92   2    4    436  6.8  ssp_interrupt
+1    330   9    4   1561  6.4  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               21
+    Statements              306
+    Comments                535
+    Volume (V)              18109
+    Difficulty (D)          73.9
+    Effort to implement (E) 1337592
+    Time to implement (T)   20 hours, 39 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   30
+    Maintainability (MI)    142
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     3  1  
+00004-0004F    76  0  
+00050-007FF  1934  34  
+00800-00F7F  1761  159  
+00F80-00FFE     0  127  
+00FFF-00FFF     0  1  
+
+
+

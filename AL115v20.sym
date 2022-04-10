@@ -1,0 +1,251 @@
+004-005 @WRITE_PACKED_MEMORY.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+004-005 @READ_PACKED_MEMORY.P3
+004-005 @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024-065 i2c_buffer
+066-067 bat_volt_lu
+068-069 r_phase_volt
+06A-06B y_phase_volt
+06C-06D b_phase_volt
+06E-06F,0A0-09F dg_volt
+070.0   lowbat
+070.1   bat_low_already_detected
+070.2   mains_ok
+070.3   r_ok
+070.4   y_ok
+070.5   b_ok
+071     address
+072     @I2C_STATE
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+0A0-0A1 volt_adj_reading
+0A2-0A3 bat_adj_reading
+0A4-0A5 phase_adjusted_volt
+0A6-0A7 rcalibvoltreading
+0A8-0A9 ycalibvoltreading
+0AA-0AB bcalibvoltreading
+0AC-0AD dgrcalibvoltreading
+0AE-0B1 rvoltratio
+0B2-0B5 yvoltratio
+0B6-0B9 bvoltratio
+0BA-0BD dgrvoltratio
+0BE-0BF calibvolt
+0C0-0C3 btsbatvoltratio
+0C4-0C5 btsbatcalibvoltreading
+0C6-0C7 btsbatcalibvolt
+0C8-0CB v_adj_ratio
+0CC-0CF b_adj_ratio
+0D0-0D1 v_range_high
+0D2-0D3 b_range_high
+0D4-0D5 bat_row_an
+0D6     main.temp_var
+0D8-0D9 ProcessMasterData.temp_value
+0D8-0D9 phasecheck2.k
+0D8     find_adj_volt.@SCRATCH1
+0D8     checkconditions.@SCRATCH1
+0D8     print_readings.@SCRATCH1
+0D8     main.@SCRATCH1
+0D9     find_adj_volt.@SCRATCH2
+0D9     checkconditions.@SCRATCH2
+0D9     print_readings.@SCRATCH2
+0D9     main.@SCRATCH2
+0DA-0DB phasecheck2.value5
+0DA-0DB @MUL1616.P1
+0DA-0DB ProcessMasterData.temp_value2
+0DA     find_adj_volt.@SCRATCH3
+0DA     checkconditions.@SCRATCH3
+0DB     find_adj_volt.@SCRATCH4
+0DC     phasecheck.k
+0DC-0DD CalculatePhaseValue.phase_reading
+0DC     phasecheck3.k
+0DC-0DD @MUL1616.P1
+0DC-0DD read_int16_alarmrom.address
+0DC-0DD phasecheck2.value
+0DC     find_adj_volt.@SCRATCH5
+0DC     init_settings.@SCRATCH1
+0DC     ProcessMasterData.@SCRATCH1
+0DD-0DE phasecheck.value5
+0DD.0   phasecheck3.done
+0DD     find_adj_volt.@SCRATCH6
+0DD     init_settings.@SCRATCH2
+0DD     ProcessMasterData.@SCRATCH2
+0DE-0E1 @ADDFF.P1
+0DE-0DF write_int16_alarmrom.address
+0DE-0DF CalculatePhaseValue.input_value
+0DE-0E1 phasecheck3.value5
+0DE     read_int16_alarmrom.@SCRATCH1
+0DE     phasecheck2.@SCRATCH1
+0DE     @MUL1616.@SCRATCH1
+0DE     init_settings.@SCRATCH3
+0DF-0E0 phasecheck.value
+0DF     read_int16_alarmrom.@SCRATCH2
+0DF     init_settings.@SCRATCH4
+0E0-0E1 write_int16_alarmrom.data
+0E0-0E3 @SFTOI.P1
+0E0     CalculatePhaseValue.@SCRATCH1
+0E1     @delay_ms1.P1
+0E1-0E2 @DIV1616.P2
+0E1     phasecheck.@SCRATCH1
+0E1     CalculatePhaseValue.@SCRATCH2
+0E2-0E5 phasecheck3.value
+0E2     @delay_us1.P1
+0E2-0E5 @ADDFF.P2
+0E2     write_int16_alarmrom.@SCRATCH1
+0E2     CalculatePhaseValue.@SCRATCH3
+0E3-0E4 @DIV1616.P1
+0E3     write_int16_alarmrom.@SCRATCH2
+0E3     CalculatePhaseValue.@SCRATCH4
+0E4-0EF,120-153 @FLASHLOAD16.@LOCAL
+0E4-0E7 @MULFF.P1
+0E4     CalculatePhaseValue.@SCRATCH5
+0E5     @DIV1616.@SCRATCH1
+0E5     CalculatePhaseValue.@SCRATCH6
+0E6-0E9 @DIV3232.P1
+0E6     CalculatePhaseValue.@SCRATCH7
+0E7     CalculatePhaseValue.@SCRATCH8
+0E8-0EB @DIVFF.P1
+0E8-0E9 @ITOF.P2
+0E8-0EB @MULFF.P3
+0E8     @ADDFF.@SCRATCH1
+0E9     @ADDFF.@SCRATCH2
+0EA-0ED @DIV3232.P1
+0EA     @ADDFF.@SCRATCH3
+0EB     @ADDFF.@SCRATCH4
+0EC-0EF,120-11F @DIVFF.P1
+0EC     @ADDFF.@SCRATCH5
+0ED     @ADDFF.@SCRATCH6
+0EE     @ADDFF.@SCRATCH7
+0EF     @ADDFF.@SCRATCH8
+120     @DIV3232.@SCRATCH1
+120     @MULFF.@SCRATCH1
+121     @DIV3232.@SCRATCH2
+121     @MULFF.@SCRATCH2
+122     @DIV3232.@SCRATCH3
+122     @MULFF.@SCRATCH3
+122     @DIVFF.@SCRATCH1
+123     @DIV3232.@SCRATCH4
+123     @MULFF.@SCRATCH4
+123     @DIVFF.@SCRATCH2
+124     @DIV3232.@SCRATCH5
+124     @MULFF.@SCRATCH5
+124     @DIVFF.@SCRATCH3
+125     @DIVFF.@SCRATCH4
+126     @DIVFF.@SCRATCH5
+127     @DIVFF.@SCRATCH6
+130     ssp_interrupt.incoming
+131     ssp_interrupt.state
+132     ssp_interrupt.@SCRATCH1
+133     @I2C_WRITE_1.P1
+133     ssp_interrupt.@SCRATCH2
+154     @FLASHLOAD16.@LOCAL
+30C     CCP_1_LOW
+30C     CCP_1
+30D     CCP_1_HIGH
+310     CCP_2
+310     CCP_2_LOW
+311     CCP_2_HIGH
+316.5   PWM3OUT
+31A.5   PWM4OUT
+31E.5   PWM5OUT
+38E.5   PWM6OUT
+592.5   N1OUT
+81A-81B @WRITE_PROGRAM_MEMORY8.P1
+81A-81B @READ_PROGRAM_MEMORY8.P2
+990.6   C1OUT
+994.6   C2OUT
+1E10.5  LC1OUT
+1E1A.5  LC2OUT
+1E24.5  LC3OUT
+1E2E.5  LC4OUT
+
+ROM Allocation:
+000050  TIMER2_isr
+000056  TIMER0_isr
+00005C  OSC_FAIL_isr
+000063  ssp_interrupt
+0000A9  @I2C_WRITE_1
+0000BF  read_int16_alarmrom
+0000D9  write_int16_alarmrom
+0000EE  @FLASHLOAD16
+000146  ResetRomPhase
+000174  ResetRomBattery
+000189  ResetRomKnob
+0001AE  reset_rom
+0001BB  read_rom_values
+00020E  @ITOF
+00022D  @DIVFF
+000327  init_settings
+000460  @delay_ms1
+000479  @delay_us1
+000490  phasecheck
+0004BE  @DIV1616
+0004EC  @MULFF
+000588  @ADDFF
+0006CF  @SFTOI
+0006F0  phasecheck2
+000725  phasecheck3
+000764  @DIV3232
+000800  find_adj_volt
+00081C  @MUL1616
+0008F5  print_readings
+00094D  checkconditions
+000B7E  CalculatePhaseValue
+000BEB  ProcessMasterData
+000D97  main
+000D97  @cinit1
+000E38  @cinit2
+
+Project Directory:
+    E:\programs\AL115v20_16F15354\
+
+Project Files:
+    AL115v20.c                                              [10-Jun-18 09:54  CRC=BDD539AE]
+    main.h                                                  [28-Apr-18 12:35  CRC=8C232F3F]
+    C:\Program Files (x86)\PICC\Devices\16F15354.h          [21-Jul-17 13:41  CRC=4E6D5891]
+    C:\Program Files (x86)\PICC\Drivers\stdint.h            [06-May-16 11:24  CRC=FE3369EA]
+    definitions.c                                           [10-Jun-18 10:39  CRC=1B1F07B8]
+    rom.c                                                   [26-Jun-18 11:12  CRC=0E7D2446]
+    checkconditions.c                                       [10-Jun-18 09:44  CRC=EAFA58DE]
+    functions.c                                             [14-Mar-18 13:10  CRC=1DD1B8B9]
+    int.c                                                   [28-Apr-18 10:44  CRC=2810E308]
+    i2c_display.c                                           [09-Dec-15 17:13  CRC=F31DDF89]
+
+Source signature=D74E0B17
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=244F
+
+Units:
+    AL115v20 (main)
+
+Compiler Settings:
+    Processor:      PIC16F15354
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Case Sensitive: Yes
+    Enhanced 16:    Yes
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   AL115v20.xsym
+    Errors:      AL115v20.err
+    Ext Symbols: AL115v20.esym
+    INHX8:       AL115v20.hex
+    Symbols:     AL115v20.sym
+    List:        AL115v20.lst
+    Debug/COFF:  AL115v20.cof
+    Project:     AL115v20.ccspjt
+    Call Tree:   AL115v20.tre
+    Statistics:  AL115v20.STA
